@@ -1,0 +1,964 @@
+/* ========================================================================= */
+/* BASE STYLES & GLOBAL STYLE/
+/* ========================================================================= */
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    background-color: white;
+}
+
+/* ========================================================================= */
+/* HEADER & NAVIGATION SECTION (Desktop/Default) */
+/* ========================================================================= */
+
+
+.nav-container{
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    display: flex;
+    width: 100%;
+    height: auto;
+    max-height: 80px; 
+    gap: 30px; 
+    background-color: white;
+    margin: 0 auto;
+    z-index: 10; 
+    padding: 10px 20px; 
+    box-sizing: border-box;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+.logo-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    gap: 20px;
+}
+.logo-text{
+    font-size: 35px;
+    font-family: 'Playfair Display';
+    font-weight: 700;
+    color: #4caf50;
+    letter-spacing: 1px;
+}
+.logo-text-div{
+    color:#f7a43a ;
+    font-weight: 700;
+}
+.navigation-bar{
+    display: flex;
+    flex-grow: 1; 
+    justify-content: flex-end; 
+    align-items: center; 
+}
+.navigation-bar nav {
+    width: 100%; 
+    display: flex;
+    justify-content: flex-end;
+}
+.navigation-bar nav ul{
+    display: flex;
+    list-style-type: none;
+    flex-direction: row;
+    flex-wrap: nowrap; 
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+.navigation-bar nav ul li{
+    padding: 20px 15px;
+    justify-content: center;
+    align-items: center;
+    width: auto; 
+}
+.navigation-bar nav ul li a{
+    position: relative;
+    text-decoration: none;
+    color: #333;
+    font-size: 15px;
+    font-family: 'Poppins';
+    font-weight: 600;
+    transition: transform 0.3s ease;
+}
+.navigation-bar nav ul li a:hover{
+    color: #4caf50;
+}
+
+/* Green Underline Hover Effect */
+.navigation-bar nav ul li a::after{
+    content: '';
+    position: absolute;
+    width: 0; 
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background-color: #4caf50;
+    transition: width 0.4s ease;
+}
+.navigation-bar nav ul li a:hover::after{
+    width: 100%; 
+    left: 0;
+    background-color:#4caf50;
+}
+.product-dropdown{
+    display: block;
+    display: inline-block;
+}
+.product-dropdown .arrow-icon{
+    vertical-align:middle;
+}
+
+/* Desktop Dropdown Styles */
+.dropdown-content{
+    display: none; 
+    position:absolute; 
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0px 8px 10px 0px black;
+    z-index: 10;
+    border-radius: 5px;
+    overflow:hidden;
+    opacity: 0; 
+    transform: translateX(10px);
+    transition: transform 0.3s ease-out ,opacity 0.3s ease-out;
+}
+.product-dropdown:hover .dropdown-content{
+    display: block; 
+    transform: translateY(0);
+    opacity: 1; 
+}
+.dropdown-content a{
+    color: black;
+    padding: 12px 15px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    transition: background-color 0.3s;
+}
+
+/* ========================================================================= */
+/* MAIN CONTENT SECTION */
+/* ========================================================================= */
+section {
+    padding: 10px 0;
+    text-align: center;
+}
+
+.hero-section{
+    position: relative;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0; 
+    padding-top: 0; 
+}
+.hero-section .image-slideshow img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 5;
+}
+.hero-section .image-slideshow img.active{
+    opacity: 1;
+}
+.hero-text {
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    color: white;
+    text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.7);
+}
+.hero-text h1 {
+    color: white;
+    font-size: 4rem;
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+/* About Section */
+.about-container{
+    max-width: 1100px; 
+    width: 90%; 
+    margin: 0 auto;
+    background-color: rgba(231, 233, 236, 0.411);
+}
+.about-container h1{
+    font-size: 40px;
+    font-family: 'Playfair Display';
+    color:#2c3e50 ;
+}
+.about-container p{
+    color:#333;
+    font-family: 'Poppins';
+    font-size: 18px;
+    font-weight: 400;
+}
+.about-flex-container{
+    display: flex;
+    flex-direction: row;
+    padding: 30px;
+    gap: 30px;
+}
+.about-container .about-flex-container .about-text{
+    flex: 1;
+    color:#333;
+    font-family: 'Poppins';
+    font-size: 18px;
+    font-weight: 400;
+}
+.about-container .about-flex-container .about-text h3{
+    color: #333;
+    font-weight: bold;
+    text-align:left;
+}
+.about-container .about-flex-container .about-text p{
+    color: #333;
+    font-weight: 400;
+    text-align: justify;
+}
+.about-container .about-flex-container .about-image{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.about-container .about-flex-container .about-image>img{
+    width: 450px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 3px 3px 10px black;
+}
+
+/* Product Section */
+.products-container{
+    max-width: 1100px;
+    width: 90%; 
+    height: auto;
+    margin: 0 auto;
+}
+.products-container h1{
+    font-size: 40px;
+    font-family: 'Playfair Display';
+    color:#2c3e50 ;
+}
+.products-container p{
+    color:#333;
+    font-family: 'Poppins';
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+.products-container .products{
+    display: grid;
+    grid-template-columns: repeat(3,1fr ); 
+    gap: 40px;
+    margin: 0 auto;
+}
+.products-container .products img{
+    width: 250px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.products-container .products h3{
+    font-family: 'Playfair Display';
+    color: #2c3e50;
+    font-weight: bold;
+}
+.products-container .products p{
+    font-family: 'Poppins';
+    color: #2c3e50;
+    font-size: 15px;
+    font-weight: 400;
+}
+.products-container .products .price{
+    line-height: 20px;
+    padding-bottom: 10px;
+}
+.products-container .products .price .old-price{
+    text-decoration: line-through;
+    font-size: 20px;
+    font-weight: bold;
+    color: #4caf50;
+}
+.products-container .products .price .new-price{
+    color: #f7a43a;
+    font-size: 20px;
+    font-weight: bolder;
+}
+.products-container .products .cart-button{
+    text-decoration: none;
+    display: inline-block;
+    background-color: #4caf50;
+    color: white;
+    border-radius: 50px;
+    font-weight: 600;
+    padding: 10px 10px;
+}
+.products-container .products .cart-button:hover {
+    background-color: #3b8b3d;
+}
+.product-1,.product-2,.product-3,.product-4,.product-5,.product-6{
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 #00000033;
+    padding: 20px;
+    width: auto; 
+}
+.products-container .products > div:hover {
+    box-shadow: 0 4px 8px 0 #00000033, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transform: translateY(-5px);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+/* Virgin Coconut OIl vs Regular Coconut Oil Comparison */
+.comparison-container h1{
+    font-family: 'Playfair Display';
+    color: #2c3e50;
+    font-size: 40px;
+}
+.comparison-container p{
+    color:#333;
+    font-family: 'Poppins';
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+.oil-container{
+    max-width: 1000px; 
+    width: 90%; 
+    display: grid;
+    grid-template-columns: repeat(2,1fr); 
+    gap: 10px;
+    margin: 0 auto;
+    padding: 40px;
+    height: auto;
+}
+.oil-container img{
+    position: relative;
+    top: 40px;
+    width: 400px;
+    height: 300px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+.oil-container h3{
+    color: #2c3e50;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: 'Playfair Display';
+}
+.oil-container li{
+    font-family: 'Poppins';
+    font-size: 19px;
+    color: #333;
+}
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+.oil-container ul{
+    list-style-type: none;
+}
+.oil-container > div{
+    box-shadow: 0px 6px 10px 0px #00000033 ;
+    border-radius: 10px;
+}
+.oil-container > div:hover{
+    transform: translateY(-5px);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+}
+.vco-container ul li{
+    display:block;
+    text-align: justify;
+}
+.vco-container .check-circle{
+    color: green;
+    font-size: 18px;
+    margin-right: 10px;
+}
+.regular-container ul li{
+    display:block;
+    text-align: justify;
+}
+.regular-container .cross-circle{
+    color: red;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+/* How to Use Section */
+.uses-full-container h1{
+    font-size: 40px;
+    font-family: 'Playfair Display';
+    color: #2c3e50;
+}
+.uses-full-container p{
+    font-size: 18px;
+    font-family: 'Poppins';
+    font-weight: 400;
+    color: #333;
+    margin-bottom: 30px;
+}
+.oil-uses-container{
+    max-width: 1000px; 
+    width: 90%; 
+    display: grid;
+    grid-template-columns: repeat(3,1fr); 
+    gap: 30px;
+    padding: 30px;
+    margin: 0 auto;
+    height: auto;
+}
+.oil-uses-container img{
+    width: 250px;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.oil-uses-container h3{
+    font-family: 'Playfair Display';
+    font-weight: bold;
+    color: #2c3e50;
+    font-size: 25px;
+}
+.oil-uses-container p{
+    font-size:18px ;
+    font-family: 'Poppins'; 
+    color: #333;
+}
+.oil-uses-container > div:hover{
+    transform: translateY(-5px);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+}
+.oil-uses-container > div{
+    box-shadow: 0px 8px 12px 0px #00000033 ;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/* Testimonials Part */
+.testimonials{
+    max-width: 700px; 
+    width: 90%; 
+    height: auto;
+    margin: 0 auto;
+}
+.testimonials h2{
+    font-size: 37px;
+    font-family: 'Playfair Display';
+    color: #2c3e50;
+}
+.testimonials p{
+    font-size: 18px;
+    font-family: 'Poppins';
+    color: #333;
+    font-weight: 400;
+    margin-bottom: 50px;
+}
+.testimonials-grid{
+    display: grid;
+    grid-template-columns: repeat(2,1fr); 
+    gap: 40px;
+}
+.testimonials-content{
+    font-size: 18px;
+    font-family: 'Poppins';
+    font-weight: 300;
+    border-radius: 15px;
+    box-shadow: 0px 8px 12px 0px #00000033;
+    padding: 20px;
+}
+/* Ensures the third item is centered and constrained to 300px on large screens */
+.testimonials-content:nth-child(3) {
+    grid-column: 1 / -1; 
+    justify-self: center;
+    width: 300px; 
+}
+.testimonials-content .testimonials-person{
+    color: #f7a43a;
+    font-weight:600;
+}
+
+/* FAQ Section */
+.faq {
+    max-width: 1000px;
+    width: 90%; 
+    height: auto;
+    margin: 0 auto;
+}
+.faq h2 {
+    font-size: 35px;
+    font-family: 'Playfair Display';
+    color: #2c3e50;
+}
+.faq p{
+    font-size: 18px;
+    font-family: 'Poppins';
+    color: #333;
+    font-weight: 400;
+    margin-bottom: 50px;
+}
+.faq .faq-spec {
+    text-align: center;
+}
+.questions-answers-container {
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.question {
+    background-color: #f1f1f1;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 18px;
+    transition: 0.4s;
+    font-family: 'Poppins';
+    font-weight: 500;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+}
+.question .add {
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+.question.active .add {
+    transform: rotate(45deg);
+}
+.answers {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0; 
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+.answers p {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 18px;
+    font-family: 'Poppins';
+    color: #333;
+}
+
+/* Contact and Message Section (Desktop) */
+.contact{
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: 0; 
+    padding-bottom: 40px; 
+    background-color: rgba(231, 233, 236, 0.411);
+
+}
+.contact h1{
+    font-size: 40px;
+    font-family: 'Playfair Display';
+    color: #2c3e50;
+}
+.contact p{
+    font-size: 18px;
+    font-family: 'Poppins';
+    color: #333;
+    font-weight: 400;
+    margin-bottom: 40px;
+}
+.form-container{
+    max-width: 1100px; 
+    width: 90%; 
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row; /* Image and form side-by-side */
+    gap: 60px;
+    padding: 0px;
+}
+.form-container .form-image img{
+    flex: 1;
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0px 10px 15px 6px #00000033;
+    background-color: white;
+}
+.form-container form{
+    flex: 1;
+    padding: 50px;
+    box-shadow: 0px 8px 12px 6px #00000033;
+    border-radius: 15px;
+    background-color: white;
+}
+/* Combined and fixed form elements */
+.form-container form .name,
+.form-container form .email,
+.form-container form .message,
+.form-container form button {
+    width: 100%;
+    max-width: 400px; 
+    height: 50px;
+    margin: 0 auto 30px;
+    border-radius: 8px;
+    outline: 1px solid rgb(5, 158, 21);
+    border: none;
+    font-size: 18px;
+    font-family: 'Poppins';
+    padding-left: 10px;
+    box-sizing: border-box; 
+}
+/* Separate styles for elements that need different height/margin */
+.form-container form .message{
+    height: 150px;
+    margin-bottom: 40px;
+}
+.form-container form button{
+    height: 50px;
+    border-radius: 30px;
+    margin-bottom: 0;
+    background-color: #4caf50;
+    color: white;
+    font-size: 18px;
+    font-family: 'Poppins';
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    outline: 1px solid rgb(5, 158, 21);
+    max-width: 400px; 
+}
+.form-container form button:hover{
+    background-color: #3b8b3d;
+}
+.email::placeholder,.name::placeholder,.message::placeholder{
+    font-size: 18px;
+    font-family: 'Poppins';
+    font-weight: 400;
+    padding: 20px;
+}
+/* Message Box Starts From Here*/
+.message-box {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.message-box-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    position: relative;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.message-box-container p {
+    font-size: 1.2rem;
+    color: #333; 
+}
+
+.message-box-container .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 2rem;
+    color: #aaa;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.message-box-container .close-btn:hover {
+    color: #555;
+}
+
+/* Footer Section */
+.footer-wrapper{
+    width:100%;
+    height:auto;
+    margin: 0 auto;
+    position: relative;
+    background-image: url('/images/greensky.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:top;
+}
+footer{
+    max-width: 75rem; 
+    width: 90%; 
+    height: auto;
+    margin: 0 auto;
+}
+.footer-container-1{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 auto;
+    gap: 0.625rem; 
+    border-bottom: 1px solid white;
+    margin-bottom: 1.25rem; 
+}
+.footer-container-1  .footer-column{
+    flex: 1;
+    font-size: 0.9375rem; 
+    font-family: 'Poppins';
+    font-weight: 400;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 1px;
+    color: white;
+    padding: 0.75rem; 
+    margin: 0 auto;
+    line-height: 1.5rem; 
+}
+.footer-container-1  .footer-column h4{
+    font-size: 1.875rem; 
+    font-family: 'Playfair Display';
+    font-weight: 500;
+    color: white;
+    text-align: center;
+}
+.footer-container-1  .footer-column ul{
+    list-style-type: none;
+    padding: 0.3rem; 
+}
+.footer-container-1   .footer-column ul li a{
+    text-decoration: none;
+    color: white;
+}
+.footer-container-1 .footer-column .social-links a{
+    text-decoration: none;
+    color: white;
+    justify-content: center;
+}
+.copyright{
+    font-size: 0.9375rem; 
+    font-family: 'Poppins';
+    font-weight: 500;
+    color:#ccc;
+    text-align: center;
+    padding: 0.625rem; 
+}
+
+/* ========================================================================= */
+/*  TABLET RESPONSIVENESS (Max-width: 768px) */
+/* ========================================================================= */
+@media (max-width: 768px) {
+    /* --- Navigation --- */
+    .nav-container { 
+        position: relative; 
+        flex-direction: column; 
+        justify-content: center;
+        align-items: center;
+        max-height: fit-content;
+        padding-bottom: 10px;
+
+    }
+    
+    .logo-container {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .navigation-bar nav ul {
+        flex-direction: row; 
+        flex-wrap: wrap; 
+        justify-content: space-around; 
+    }
+    
+    .navigation-bar nav ul li {
+        width: 25%; 
+        text-align: center; 
+        padding: 15px 5px; 
+    }
+
+    /* Hide the dropdown content for tablets */
+    .dropdown-content {
+        display: none; 
+        position: static; 
+        box-shadow: none; 
+        opacity: 1; 
+        transform: none; 
+        min-width: auto;
+        max-height: none; 
+        padding-left: 10px; 
+    }
+
+    .hero-section {
+        margin-top: 0; 
+    }
+    
+    /* --- Layout Adjustments --- */
+    .about-flex-container {
+        flex-direction: column; 
+    }
+    
+    /* Form container stacks vertically on Tablet */
+    .form-container {
+        flex-direction: column; 
+        gap: 30px;
+    }
+    .form-container .form-image img {
+        width: 100%; 
+        height: auto;
+    }
+    
+    .products-container .products {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    .oil-container {
+        grid-template-columns: 1fr; 
+    }
+    .oil-uses-container {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    .testimonials-grid {
+        grid-template-columns: 1fr; 
+    }
+    .testimonials-content:nth-child(3) {
+        grid-column: 1 / -1; 
+        width: 100%; 
+        max-width: none; 
+        justify-self: stretch; 
+    }
+    
+    /* --- Footer --- */
+    .footer-container-1 {
+        flex-wrap: wrap; 
+        justify-content: space-around;
+    }
+    .footer-container-1 .footer-column {
+        width: 45%; 
+        align-items: flex-start;
+    }
+}
+
+
+/* ========================================================================= */
+/*  MOBILE RESPONSIVENESS (Max-width: 480px) */
+/* ========================================================================= */
+@media (max-width: 480px) {
+    
+    /* --- Navigation --- */
+    .nav-container {
+        position: relative; 
+        max-height: fit-content;
+    }
+    
+    .logo-container {
+        flex-direction: column; 
+    }
+
+    .navigation-bar nav ul {
+        flex-direction: row; 
+        flex-wrap: wrap; 
+        justify-content: space-around; 
+    }
+
+    .navigation-bar nav ul li {
+        width: 50%; 
+        text-align: center; 
+        padding: 10px 5px; 
+    }
+
+    /* Hide the dropdown content for mobile */
+    .dropdown-content {
+        display: none; 
+        position: static; 
+        box-shadow: none; 
+        opacity: 1; 
+        transform: none; 
+        min-width: auto;
+        max-height: none;
+        padding-left: 10px;
+    }
+
+     .hero-section {
+        margin-top: 0; 
+    }
+    .about-container .about-flex-container .about-image>img{
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 3px 3px 10px black;
+    }
+
+    /* Form container stacks vertically on Mobile */
+    .form-container {
+        flex-direction: column; 
+        gap: 20px;
+        padding: 0 10px;
+    }
+    .form-container .form-image img {
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+    }
+
+    /* --- Layout Adjustments --- */
+    .products-container .products {
+        grid-template-columns: 1fr; 
+    }
+    .oil-uses-container {
+        grid-template-columns: 1fr; 
+    }
+    .oil-container{
+        width: 100%;
+        padding: 0;
+    }
+    .testimonials-content:nth-child(3) {
+        grid-column: 1 / -1; 
+        width: 100%; 
+        max-width: 325px;
+        justify-self: stretch; 
+    }
+    .footer{
+        width: 100%;
+    }
+
+    /* --- Footer --- */
+    .footer-container-1 {
+        flex-direction: column; 
+    }
+    
+    .footer-container-1 .footer-column {
+        width: 100%;
+        align-items: center; 
+        text-align: center;
+    }
+}
