@@ -711,7 +711,7 @@ section {
     height:auto;
     margin: 0 auto;
     position: relative;
-    background-image: url('/images/greensky.jpg');
+    background-image: url('images/greensky.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position:top;
